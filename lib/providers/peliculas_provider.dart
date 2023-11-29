@@ -2,10 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:peliculas/keys.dart';
 import 'package:peliculas/models/pelicula_model.dart';
 
 class PeliculasProvider {
-  final String _apikey = '5f21505eb148f2635621166a47822fdd';
+  final String _apikey = api_key;
   final String _url = 'api.themoviedb.org';
   final String _language = 'es-ES';
   int _popularesPage = 0;
