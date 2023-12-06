@@ -34,17 +34,21 @@ class MovieHorizontal extends StatelessWidget {
   }
 
   tarjeta(BuildContext context, Pelicula pelicula) {
+    pelicula.uniqueId = '${pelicula.id}-movie';
     final tarjeta = Container(
       margin: const EdgeInsets.only(right: 15.0),
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: FadeInImage(
-              placeholder: const AssetImage('assets/img/no-image.png'),
-              image: NetworkImage(pelicula.getPosterimg()),
-              fit: BoxFit.cover,
-              height: 130.0,
+          Hero(
+            tag: pelicula.uniqueId,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: FadeInImage(
+                placeholder: const AssetImage('assets/img/no-image.png'),
+                image: NetworkImage(pelicula.getPosterimg()),
+                fit: BoxFit.cover,
+                height: 130.0,
+              ),
             ),
           )
         ],

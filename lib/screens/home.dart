@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:peliculas/providers/peliculas_provider.dart';
+import 'package:peliculas/utils/search_delegate.dart';
 import 'package:peliculas/widgets/card_swiper.dart';
 import 'package:peliculas/widgets/movie_horizontal.dart';
 
@@ -19,7 +20,11 @@ class Home extends StatelessWidget {
         title: Text('Peliculas en Cartelera'),
         backgroundColor: Colors.black87,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded)),
+          IconButton(
+              onPressed: () {
+                showSearch(context: context, delegate: Datasearch());
+              },
+              icon: Icon(Icons.search_rounded)),
         ],
       ),
       body: Container(
